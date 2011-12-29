@@ -50,11 +50,11 @@
 				margin: 0.25em 0;
 			}
 
-			#controller-list ul {
+			#searchForm ul {
 				list-style-position: inside;
 			}
 
-			#controller-list li {
+			#searchForm li {
 				list-style-position: inside;
 				margin: 0.25em 0;
 			}
@@ -85,15 +85,20 @@
 			<h1>Bienvenido a SoundCloud</h1>
 			<p>Aqui podras conocer mas acerca de tus artitas y bandas favoritas y similares</p>
 
-			<div id="controller-list" role="navigation">
-        <g:form controller="music" action="search" >
-          <h2>Ingresa el nombre :</h2>
-          <g:textField name="q" />
-          <g:select name="type" from="${LastfmSearchTypeEnum.codeMessages()}"
-                                             keys="${LastfmSearchTypeEnum.values()}" />
-          <g:submitButton name="search" />
-				</g:form>
+			<div id="searchForm" role="navigation">
+        	<g:form controller="music" action="search" >
+	          <h2>Ingresa el nombre :</h2>
+	          <g:textField name="q" />
+	          <g:select name="type" keys="${LastfmSearchTypeEnum.values()}" 
+						from="${LastfmSearchTypeEnum.getCodeMessages().collect( {g.message( code: it )} )}" />
+	          <g:submitButton name="search" />
+			</g:form>
 			</div>
+
+<br/>
+			<g:if test="${searchResult}">
+				<g:render template="showSearchResult" searchResult="${searchResult}" />
+			</g:if>
 		</div>
 	</body>
 </html>
