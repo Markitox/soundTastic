@@ -4,11 +4,13 @@ import com.soundtastic.provider.lastfm.LastfmSearchTypeEnum
 
 class MusicController {
 
+  def lastfmProviderService
+
   def index() { }
 
   def search( SearchCommand searchCommand ) {
-println "Search: ${searchCommand.dump()}"
-    render view: '/index'
+	def searchResult = lastfmProviderService.search( searchCommand )
+    render view: '/index', model: [searchResult: searchResult]
   }
 
 }
