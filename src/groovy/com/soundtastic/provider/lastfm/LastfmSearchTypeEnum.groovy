@@ -14,7 +14,7 @@ public enum LastfmSearchTypeEnum {
 
   String getCodeMessage(){ codeMessage }
 
-  static List getCodeMessages(){
+  static List<String> getCodeMessages(){
     LastfmSearchTypeEnum.values()*.getCodeMessage()
   }
 }
