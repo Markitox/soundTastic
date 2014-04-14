@@ -1,22 +1,24 @@
 package com.soundtastic
 
-import com.soundtastic.provider.lastfm.LastfmSearchTypeEnum
+import grails.converters.JSON
 
 class MusicController {
 
-  def lastfmProviderService
+  def index() {
+    render (['result': 'Ok', 'type': request.method] as JSON)
+  }
 
-  def index() { }
+  def save() {
+    render (['result': 'Ok', 'type': request.method] as JSON)
+  }
 
-  def search( SearchCommand searchCommand ) {
-	def searchResult = lastfmProviderService.search( searchCommand )
-    render view: '/index', model: [searchResult: searchResult]
+  def show() {
+    render (['result': 'Ok', 'type': request.method, 'id': params.id] as JSON)
+  }
+
+  def update() {
+    render (['result': 'Ok', 'type': request.method, 'id': params.id] as JSON)
   }
 
 }
 
-
-class SearchCommand {
-  String q
-  LastfmSearchTypeEnum type
-}
