@@ -1,10 +1,14 @@
 package com.soundtastic.provider.util.enumeration.type
 
 public enum SearchTypeEnum {
-  ARTIST  ('sf.lastfm.search.type.artist'),
-  ALBUM   ('sf.lastfm.search.type.album'),
-  EVENT   ('sf.lastfm.search.type.event'),
-  TRACK   ('sf.lastfm.search.type.track')
+  ARTIST  ('soundTastic.search.type.artist'),
+  ALBUM   ('soundTastic.search.type.album'),
+  TRACK   ('soundTastic.search.type.track'),
+  USER    ('soundTastic.search.type.user'),
+  TAG     ('soundTastic.search.type.tag'),
+  VENUE   ('soundTastic.search.type.venue'),
+  RADIO   ('soundTastic.search.type.radio'),
+  ALL     ('soundTastic.search.type.all')
 
   private final String codeMessage
 
