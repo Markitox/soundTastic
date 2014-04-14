@@ -1,2 +1,21 @@
-Prototype app for  merge music services and social networks
+Prototype app for merging music services and social networks
 
+This version use:
+
+Grails
+Angular
+Yeoman
+CoffeeScript
+
+Setup, execute the follow commands line:
+
+npm install
+bower install
+
+To start app, run:
+
+coffee -o web-app/js -cw src/coffee
+
+and another console
+
+grails run-app
