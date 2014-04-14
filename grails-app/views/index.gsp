@@ -1,4 +1,4 @@
-<%@ page import="com.soundtastic.provider.lastfm.LastfmSearchTypeEnum" %>
+<%@ page import="com.soundtastic.provider.lastfm.SearchTypeEnum; com.soundtastic.provider.util.enumeration.type.SearchTypeEnum" %>
 <!doctype html>
 <html>
 	<head>
@@ -89,8 +89,8 @@
         	<g:form controller="music" action="search" >
 	          <h2>Ingresa el nombre :</h2>
 	          <g:textField name="q" />
-	          <g:select name="type" keys="${LastfmSearchTypeEnum.values()}" 
-						from="${LastfmSearchTypeEnum.getCodeMessages().collect( {g.message( code: it )} )}" />
+	          <g:select name="type" keys="${SearchTypeEnum.values()}"
+						from="${SearchTypeEnum.getCodeMessages().collect( {g.message( code: it )} )}" />
 	          <g:submitButton name="search" />
 			</g:form>
 			</div>
