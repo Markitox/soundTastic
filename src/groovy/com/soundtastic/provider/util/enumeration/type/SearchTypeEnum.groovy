@@ -1,6 +1,6 @@
-package com.soundtastic.provider.lastfm
+package com.soundtastic.provider.util.enumeration.type
 
-public enum LastfmSearchTypeEnum {
+public enum SearchTypeEnum {
   ARTIST  ('sf.lastfm.search.type.artist'),
   ALBUM   ('sf.lastfm.search.type.album'),
   EVENT   ('sf.lastfm.search.type.event'),
@@ -8,13 +8,13 @@ public enum LastfmSearchTypeEnum {
 
   private final String codeMessage
 
-  LastfmSearchTypeEnum(String codeMessage){
+  SearchTypeEnum(String codeMessage){
     this.codeMessage = codeMessage
   }
 
   String getCodeMessage(){ codeMessage }
 
   static List<String> getCodeMessages(){
-    LastfmSearchTypeEnum.values()*.getCodeMessage()
+    SearchTypeEnum.values()*.getCodeMessage()
   }
 }
