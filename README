@@ -14,8 +14,8 @@ bower install
 
 To start app, run:
 
-coffee -o web-app/js -cw src/coffee
-
-and another console
+>coffee -o web-app/js -cw src/coffee  // not used anymore, now the app use a plugin to compile CoffeeScript file sources
+>
+>and another console
 
 grails run-app
