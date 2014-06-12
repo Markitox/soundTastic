@@ -27,8 +27,31 @@
       </p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view></div>
+    <div class="header">
+      <ul class="nav nav-pills pull-right">
+        <li class="active"><a ng-href="#/">Home</a></li>
+        <li><a ng-href="#/about">About</a></li>
+        <li><a ng-href="#/contact">Contact</a></li>
+      </ul>
+      <h3 class="text-muted">soundTastic</h3>
+    </div>
+
+    <div ng-controller="HomeCtrl" class="container">
+      <div class="jumbotron">
+        <form name="search-music" ng-submit="search(query)" >
+          <input ng-model="query" ng-enter="search(query)">
+          <input type="submit" class="btn btn-lg btn-info"
+                 value="Search" /> <br/>
+        </form>
+      </div>
+
+      <!-- Add your site or application content here -->
+      <div ng-view></div>
+    </div>
+
+    <div class="footer">
+      <p>Music lovers</p>
+    </div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -49,7 +72,9 @@
 
     <!-- build:js({.tmp,app}) js/scripts.js -->
     <script src="js/app.js"></script>
-    <script src="js/controllers/main.js"></script>
+    <script src="js/models/Music.js"></script>
+    <script src="js/controllers/homeCtrl.js"></script>
+    <script src="js/controllers/searchCtrl.js"></script>
     <script src="js/directives/ui-directives.js"></script>
     <!-- endbuild -->
 </body>

@@ -1,27 +1,9 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">soundTastic</h3>
-</div>
+<div class="soundTastic-results" ng-if="searchResult">
 
-<div class="jumbotron">
-  <form name="search-music" ng-controller="MainCtrl" ng-submit="search(query)" >
-  <h4>Try find funny music for you</h4>
-  <p>
-    <input ng-model="query" ng-enter="search(query)">
-    <input type="submit" class="btn btn-lg btn-info"
-           value="Search" /> <br/>
-  </p>
-  </form>
-</div>
+  <ng-include src="'views/music/results/album.html'"></ng-include>
 
-<div class="soundTastic-results">
+  <ng-include src="'views/music/results/artist.html'"></ng-include>
 
-</div>
+  <ng-include src="'views/music/results/track.html'"></ng-include>
 
-<div class="footer">
-  <p>Music lovers</p>
 </div>
