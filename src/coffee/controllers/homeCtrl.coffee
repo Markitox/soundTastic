@@ -27,12 +27,11 @@ homeController.controller 'HomeCtrl', [
       $checkboxSelected = $('input:checked[value!=ALL].check-type')
 
     $scope.search = (query) ->
-      console.log "===> Search for: #{query}"
 
       Music.get q: query,
-          (result) ->
-            console.log result
-            return
+      (result) ->
+        $scope.searchResult = result
+        return
 
       return
 
