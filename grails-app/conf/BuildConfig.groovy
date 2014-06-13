@@ -57,6 +57,7 @@ grails.project.dependency.resolution = {
 //        runtime 'org.springframework.social:spring-social-google:0.0.1-SNAPSHOT'
 //        runtime 'org.springframework.social:spring-social-facebook:1.0.0.RELEASE'
     runtime 'de.u-mass:lastfm-java:0.1.2'
+    compile 'org.gmetrics:GMetrics:0.6'
   }
 
   plugins {
@@ -73,6 +74,7 @@ grails.project.dependency.resolution = {
     runtime ":jquery:1.10.2.2"
     runtime ":resources:1.2.1"
     compile ":coffeescript-compiler:0.9.4"
+    compile ":codenarc:0.21"
 
     // Uncomment these (or add new ones) to enable additional resources capabilities
     //runtime ":zipped-resources:1.0.1"
