@@ -140,3 +140,26 @@ grails.config.locations = [
 
 last.fm.account.api.key = '1b09b6726b61b2b37ae819aeb154bbc3'
 last.fm.account.api.secret = '54b394f0a340960124762e1c82dec33c'
+
+codenarc.reports = {
+  MyHtmlReport('html') {
+    outputFile = 'target/CodeNarcReport.html'
+    title = 'Violations Report'
+  }
+}
+
+codenarc.propertiesFile='grails-app/conf/codenarc.properties'
+codenarc.ruleSetFiles = [
+    "rulesets/basic.xml",
+    "rulesets/exceptions.xml",
+    "rulesets/imports.xml",
+    "rulesets/grails.xml",
+    "rulesets/unused.xml",
+    "rulesets/size.xml",
+    "rulesets/concurrency.xml",
+    "rulesets/convention.xml",
+    "rulesets/design.xml",
+    "rulesets/groovyism.xml",
+    "rulesets/imports.xml",
+    "rulesets/formatting.xml",
+    "rulesets/logging.xml"]
